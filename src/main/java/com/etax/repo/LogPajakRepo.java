@@ -10,11 +10,16 @@ import org.springframework.data.repository.query.Param;
 import com.etax.model.LogPajak;
 
 public interface LogPajakRepo extends JpaRepository<LogPajak, String> {
-	Optional<LogPajak> findByLogCif(String logCif);
-	List<LogPajak> findByLogGenerateDateBetween(LocalDate startDate, LocalDate endDate);
+    List<LogPajak> findByLogCif(String logCif);
+
+    List<LogPajak> findByLogGenerateDateBetween(LocalDate startDate, LocalDate endDate);
+
     List<LogPajak> findByLogGenerateDateAfter(LocalDate startDate);
+
     List<LogPajak> findByLogGenerateDateBefore(LocalDate endDate);
+
     List<LogPajak> findByLogStatusIgnoreCase(String logStatus);
+
     List<LogPajak> findByLogCifAndLogPeriod(String logCif, String logPeriod);
 
 }
